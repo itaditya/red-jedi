@@ -2,7 +2,6 @@ jQuery(function($) {
 	"use strict";
 	// Author Code Here
 
-	var owlPricing;
 	var ratio = 2;
 
 	// Window Load
@@ -29,20 +28,6 @@ jQuery(function($) {
 				$(this).css('border-right-width', $(this).parent().width() + "px");
 			else if ($(this).hasClass('cut-bottom'))
 				$(this).css('border-left-width', $(this).parent().width() + "px");
-		});
-
-		// Sliders Init
-		$('.owl-schedule').owlCarousel({
-			singleItem: true,
-			pagination: true
-		});
-		$('.owl-testimonials').owlCarousel({
-			singleItem: true,
-			pagination: true
-		});
-		$('.owl-twitter').owlCarousel({
-			singleItem: true,
-			pagination: true
 		});
 
 		// Navbar Init
