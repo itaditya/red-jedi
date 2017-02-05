@@ -470,17 +470,20 @@ section {
     margin: 80px 0;
     text-align: center;
     border: 1px solid #ddd;
+    background: #fff;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
 .service .icon-holder {
     position: relative;
-    top: 100px;
+    top: 50px;
+    font-size: 80px;
+    color: #00a8ff;
     display: inline-block;
-    margin-bottom: 40px;
+    /*margin-bottom: 40px;*/
     padding: 10px;
-    background: white;
+    /*background: white;*/
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
@@ -501,7 +504,7 @@ section {
 }
 
 .service:hover .icon-holder {
-    top: -30px;
+    top: -65px;
 }
 
 .service:hover .heading {

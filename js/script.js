@@ -4,17 +4,18 @@ jQuery(function ($) {
     var githubUrl = "https://github.com/";
     var githubImageUrl = "https://avatars3.githubusercontent.com/u/";
     var mainUrl = "http://red-jedi-backend.herokuapp.com/api/";
-    var leaderboardTable = $("#leaderboardTable");
 
     function getLeaderboardData() {
         var leaderboardUrl = mainUrl + "leaderboard";
         // leaderboardUrl = "/js/JSON/leaderboard.json";
-        var leaderboardItem = leaderboardTable.find(".item");
+        // var leaderboardTable = $("#leaderboardTable");
+        // var leaderboardItem = leaderboardTable.find(".item");
+        var leaderboardItem = $("#leaderboardTable .item");
         $.get(leaderboardUrl, function (users) {
             $.each(users, function (key, user) {
-            	var index = parseInt(key / 5);
-            	key = key % 5;
-            	var leaderboardItemElem = leaderboardItem.eq(index);
+                var index = parseInt(key / 5);
+                key = key % 5;
+                var leaderboardItemElem = leaderboardItem.eq(index);
                 var row = leaderboardItemElem.find(".schedule-row").eq(key);
                 user.link = githubUrl + user.login;
                 user.image = githubImageUrl + user.userId + "?v=3&s=40";
@@ -23,6 +24,24 @@ jQuery(function ($) {
                 row.find("#userCommits").html(user.weeklyCommits);
                 row.find("#userLink").attr("href", user.link);
                 row.find("#userImage").attr("src", user.image);
+            })
+        });
+    }
+
+    function getTopRepoData() {
+        var topRepoUrl = mainUrl + "topRepos";
+        topRepoUrl = "/js/JSON/topRepos.json";
+        topRepoUrl = "/js/JSON/leaderboard.json";
+        var topRepoItem = $(".services .service");
+        $.get(topRepoUrl, function (repos) {
+            $.each(repos, function (key, repo) {
+                var row = topRepoItem.eq(key);
+                repo.link = githubUrl + repo.login;
+                repo.language = "PHP";
+                repo.icon = "devicon-" + repo.language.toLowerCase()  + "-plain";
+                row.find(".icon-holder i").addClass(repo.icon);
+                row.find(".heading").html(repo.name);
+                row.find(".link").attr("href", repo.link);
             })
         });
     }
@@ -61,4 +80,5 @@ jQuery(function ($) {
         pagination: true
     });
     getLeaderboardData();
+    getTopRepoData();
 });
