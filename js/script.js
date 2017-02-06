@@ -8,8 +8,6 @@ jQuery(function ($) {
     function getLeaderboardData() {
         var leaderboardUrl = mainUrl + "leaderboard";
         // leaderboardUrl = "/js/JSON/leaderboard.json";
-        // var leaderboardTable = $("#leaderboardTable");
-        // var leaderboardItem = leaderboardTable.find(".item");
         var leaderboardItem = $("#leaderboardTable .item");
         $.get(leaderboardUrl, function (users) {
             $.each(users, function (key, user) {
@@ -25,29 +23,57 @@ jQuery(function ($) {
                 row.find("#userLink").attr("href", user.link);
                 row.find("#userImage").attr("src", user.image);
             })
+            getTopRepoData();
         });
     }
 
     function getTopRepoData() {
-        var topRepoUrl = mainUrl + "topRepos";
-        topRepoUrl = "/js/JSON/topRepos.json";
-        topRepoUrl = "/js/JSON/leaderboard.json";
+        var topRepoUrl = mainUrl + "topRepos?limit=3";
         var topRepoItem = $(".services .service");
         $.get(topRepoUrl, function (repos) {
+            console.log(repos);
             $.each(repos, function (key, repo) {
                 var row = topRepoItem.eq(key);
-                repo.link = githubUrl + repo.login;
-                repo.language = "PHP";
-                repo.icon = "devicon-" + repo.language.toLowerCase()  + "-plain";
+                repo.link = githubUrl + repo.fullName;
+                repo.language = repo.language.toLowerCase() || "html";
+                repo.description = repo.description || "N/A";
+                repo.icon = "devicon-" + repo.language + "-plain";
                 row.find(".icon-holder i").addClass(repo.icon);
                 row.find(".heading").html(repo.name);
+                row.find(".description").html(repo.description);
                 row.find(".link").attr("href", repo.link);
+            })
+            getParticipantsData();
+        });
+    }
+
+    function getAllRepoData() {
+        var topRepoUrl = mainUrl + "topRepos";
+        $.get(topRepoUrl, function (repos) {
+            console.log(repos);
+        });
+    }
+
+    function getParticipantsData() {
+        var ParticipantsUrl = mainUrl + "allUsers";
+        var ParticipantsItem = $(".owl-twitter .item");
+        $.get(ParticipantsUrl, function (users) {
+            console.log(users);
+            $.each(users, function (key, user) {
+                var index = parseInt(key / 4);
+                key = key % 4;
+                var ParticipantsElem = ParticipantsItem.eq(index);
+                var col = ParticipantsElem.find(".user-col").eq(key);
+                user.link = githubUrl + user.login;
+                user.image = githubImageUrl + user.userId + "?v=3&s=150";
+                col.find("#userName").html(user.name);
+                col.find("#userLink").attr("href", user.link);
+                col.find("#userImage").attr("src", user.image);
             })
         });
     }
 
     function getUserData() {
-        console.log('test');
         var name = $("#userDataName").val();
         if (name) {
             var userUrl = githubApiUrl + "users/" + name;
@@ -80,5 +106,4 @@ jQuery(function ($) {
         pagination: true
     });
     getLeaderboardData();
-    getTopRepoData();
 });

@@ -34,6 +34,12 @@
         <link rel="stylesheet" type="text/css" href="css/devicon.min.css"/>
         <!-- Main style -->
         <link rel="stylesheet" type="text/css" href="css/cardio.css"/>
+        <style>
+            .user-col img{
+                width: 150px;
+                height: 150px;
+            }
+        </style>
     </head>
     <body>
         <div class="preloader">
@@ -70,7 +76,7 @@
                         </li>
                         <!-- <li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a></li> -->
                         <li>
-                            <a href="http://red-jedi-backend.herokuapp.com/api/github" class="btn btn-blue">Participate</a>
+                            <a href="http://red-jedi-backend.herokuapp.com/api/github/auth" class="btn btn-blue">Participate</a>
                         </li>
                     </ul>
                 </div>
@@ -314,7 +320,7 @@
         <section id="pricing" class="section">
             <div class="container">
                 <div class="row title text-center">
-                    <h2 class="margin-top white">How To Participate</h2>
+                    <h2 class="white">How To Participate</h2>
                     <!-- <h4 class="light white"></h4> -->
                 </div>
                 <div class="row no-margin">
@@ -322,7 +328,7 @@
                         <div class="pricing">
                             <div class="box-main active" data-img="img/pricing1.jpg">
                                 <h4 class="white">Sign in with Github</h4>
-                                <a href="http://red-jedi-backend.herokuapp.com/api/github" class="btn btn-white-fill">Participate</a>
+                                <a href="http://red-jedi-backend.herokuapp.com/api/github/auth" class="btn btn-white-fill">Participate</a>
                                 <i class="info-icon icon_question"></i>
                             </div>
                             <div class="box-second active">
@@ -362,8 +368,8 @@
                                 <i class="devicon-php-plain"></i>
                             </div>
                             <a href="" class="link">
-                                <h4 class="heading">Circlebars</h4>
-                                <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+                                <h4 class="heading">Repo-Name</h4>
+                                <p class="description">Description</p>
                             </a>
                         </div>
                     </div>
@@ -373,8 +379,8 @@
                                 <i class="devicon-javascript-plain"></i>
                             </div>
                             <a href="" class="link">
-                                <h4 class="heading">Circlebars</h4>
-                                <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+                                <h4 class="heading">Repo-Name</h4>
+                                <p class="description">Description</p>
                             </a>
                         </div>
                     </div>
@@ -384,8 +390,8 @@
                                 <i class="devicon-html5-plain"></i>
                             </div>
                             <a href="" class="link">
-                                <h4 class="heading">Circlebars</h4>
-                                <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+                                <h4 class="heading">Repo-Name</h4>
+                                <p class="description">Description</p>
                             </a>
                         </div>
                     </div>
@@ -398,21 +404,28 @@
                 <div class="row title text-center">
                     <h2 class="white">All Participants</h2>
                 </div>
-                <div class="row">
+                <div class="row" style="margin-top: 80px;">
                     <div class="col-md-12">
                         <div class="owl-twitter owl-carousel">
                             <div class="item text-center">
                                 <div class="row">
-                                    <div class="col-md-3">A</div>
-                                    <div class="col-md-3">A</div>
-                                    <div class="col-md-3">A</div>
-                                    <div class="col-md-3">A</div>
+                                    <div class="col-md-3 user-col">
+                                        <a href="" id="userLink"><img src="" align="center" class="img-circle" alt="" id="userImage"/>
+                                        <h4 class="white light" style="margin-top: 40px;" id="userName"></h4></a>
+                                    </div>
+                                    <div class="col-md-3 user-col">
+                                        <a href="" id="userLink"><img src="" align="center" class="img-circle" alt="" id="userImage"/>
+                                        <h4 class="white light" style="margin-top: 40px;" id="userName"></h4></a>
+                                    </div>
+                                    <div class="col-md-3 user-col">
+                                        <a href="" id="userLink"><img src="" align="center" class="img-circle" alt="" id="userImage"/>
+                                        <h4 class="white light" style="margin-top: 40px;" id="userName"></h4></a>
+                                    </div>
+                                    <div class="col-md-3 user-col">
+                                        <a href="" id="userLink"><img src="" align="center" class="img-circle" alt="" id="userImage"/>
+                                        <h4 class="white light" style="margin-top: 40px;" id="userName"></h4></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="item text-center">
-                                <i class="icon fa fa-twitter"></i>
-                                <h4 class="white light">To enjoy the glow of good health, you must exercise.</h4>
-                                <h4 class="light-white light">#health #training #exercise</h4>
                             </div>
                         </div>
                     </div>
@@ -501,7 +514,7 @@
         <script src="js/wow.min.js"></script>
         <script src="js/typewriter.js"></script>
         <script src="js/jquery.onepagenav.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/cardio.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
