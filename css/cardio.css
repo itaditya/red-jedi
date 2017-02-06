@@ -466,6 +466,7 @@ section {
 
 .service {
     width: 100%;
+    position: relative;
     height: 320px;
     margin: 80px 0;
     text-align: center;
@@ -564,7 +565,8 @@ section {
 /* Pricing */
 
 #pricing {
-    background: #00a8ff url('../img/pricing1.jpg') no-repeat center center;
+    /*background: #00a8ff url('../img/pricing1.jpg') no-repeat center center;*/
+    background: #354b72;
     -webkit-background-size: cover;
     background-size: cover;
     -webkit-transition: background-image 0.6s linear 0.3s;
@@ -670,7 +672,10 @@ section {
 
 footer {
     padding: 140px 0 40px;
-    background: url('../img/footer.jpg');
+    /*background: url('../img/footer.jpg');*/
+    background-image: url('../img/banner-2.jpg');
+    background-color: #354b72;
+    background-blend-mode: multiply;
     -webkit-background-size: cover;
     background-size: cover;
 }

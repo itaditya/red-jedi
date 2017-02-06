@@ -35,11 +35,19 @@ jQuery(function ($) {
             $.each(repos, function (key, repo) {
                 var row = topRepoItem.eq(key);
                 repo.link = githubUrl + repo.fullName;
-                repo.language = repo.language.toLowerCase() || "html";
+                repo.language = repo.language.toLowerCase() || "html5";
+                switch(repo.language) {
+                    case "css": repo.language = "css3"
+                        break;
+                    case "html": repo.language = "html5"
+                        break;
+                }
                 repo.description = repo.description || "N/A";
                 repo.icon = "devicon-" + repo.language + "-plain";
                 row.find(".icon-holder i").addClass(repo.icon);
                 row.find(".heading").html(repo.name);
+                row.find(".stats span").html(repo.stars);
+                row.find(".commits strong").html(repo.totalWeeklyCommits);
                 row.find(".description").html(repo.description);
                 row.find(".link").attr("href", repo.link);
             })

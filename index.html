@@ -39,6 +39,29 @@
                 width: 150px;
                 height: 150px;
             }
+            .stats{
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 100px;
+                height: 40px;
+                background: #00a8ff;
+                color: #fff;
+                font-size: 20px;
+                line-height: 40px;
+            }
+            .stats span{
+                margin-right: 15px;
+            }
+            .commits{
+                padding: 15px 5px;
+                font-size: 20px;
+                position: absolute;
+                top: 95%;
+                left: 10%;
+                width: 80%;
+                border-radius: 0;
+            }
         </style>
     </head>
     <body>
@@ -66,13 +89,13 @@
                             <a href="#home">Home</a>
                         </li>
                         <li>
-                            <a href="#working">How it Works</a>
+                            <a href="#pricing">How to Participate</a>
                         </li>
                         <li>
-                            <a href="#team">Top Repos</a>
+                            <a href="#working">Top Repos</a>
                         </li>
                         <li>
-                            <a href="#pricing">Your Stats</a>
+                            <a href="#participants">Your Stats</a>
                         </li>
                         <!-- <li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a></li> -->
                         <li>
@@ -321,12 +344,11 @@
             <div class="container">
                 <div class="row title text-center">
                     <h2 class="white">How To Participate</h2>
-                    <!-- <h4 class="light white"></h4> -->
                 </div>
                 <div class="row no-margin">
                     <div class="col-md-9 no-padding col-md-offset-3 pricings text-center">
                         <div class="pricing">
-                            <div class="box-main active" data-img="img/pricing1.jpg">
+                            <div class="box-main active">
                                 <h4 class="white">Sign in with Github</h4>
                                 <a href="http://red-jedi-backend.herokuapp.com/api/github/auth" class="btn btn-white-fill">Participate</a>
                                 <i class="info-icon icon_question"></i>
@@ -339,7 +361,7 @@
                             </div>
                         </div>
                         <div class="pricing">
-                            <div class="box-main" data-img="img/pricing2.jpg">
+                            <div class="box-main">
                                 <h4 class="white">Know Your Stats</h4>
                                 <a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-white-fill">Yeah !</a>
                                 <i class="info-icon icon_question"></i>
@@ -364,34 +386,46 @@
                 <div class="row services">
                     <div class="col-md-4">
                         <div class="service">
+                            <div class="stats">
+                                <span></span><i class="fa fa-star"></i>
+                            </div>
                             <div class="icon-holder">
-                                <i class="devicon-php-plain"></i>
+                                <i class=""></i>
                             </div>
                             <a href="" class="link">
                                 <h4 class="heading">Repo-Name</h4>
                                 <p class="description">Description</p>
+                                <div class="label blue-bg commits"><strong></strong> commits this week</div>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="service">
+                            <div class="stats">
+                                <span></span><i class="fa fa-star"></i>
+                            </div>
                             <div class="icon-holder">
-                                <i class="devicon-javascript-plain"></i>
+                                <i class=""></i>
                             </div>
                             <a href="" class="link">
                                 <h4 class="heading">Repo-Name</h4>
                                 <p class="description">Description</p>
+                                <div class="label blue-bg commits"><strong></strong> commits this week</div>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="service">
+                            <div class="stats">
+                                <span></span><i class="fa fa-star"></i>
+                            </div>
                             <div class="icon-holder">
-                                <i class="devicon-html5-plain"></i>
+                                <i class=""></i>
                             </div>
                             <a href="" class="link">
                                 <h4 class="heading">Repo-Name</h4>
                                 <p class="description">Description</p>
+                                <div class="label blue-bg commits"><strong></strong> commits this week</div>
                             </a>
                         </div>
                     </div>
@@ -399,7 +433,7 @@
             </div>
             <div class="cut cut-bottom" style="border-left-color: #f7f7f7;"></div>
         </section>
-        <section class="section section-padded blue-bg">
+        <section class="section section-padded blue-bg" id="participants">
             <div class="container">
                 <div class="row title text-center">
                     <h2 class="white">All Participants</h2>
